@@ -1,0 +1,53 @@
+#include<stdio.h>
+#define MAX 10
+int stack[MAX];
+int top=-1;
+void push (int value)
+{
+    if (top==MAX-1)
+    {
+        printf("THe Stack is Overflow");
+    }
+    else
+    {
+       stack[++top] = value; 
+       printf("Pushed %d \n",value);
+    }
+}
+void pop()
+{
+    if (top==-1)
+    {
+            printf("\nStack is Empty");
+        }
+        else
+        {
+            printf("\nThe element in the Top of the Stack %d Popped",stack[top]);
+            top--;
+        }
+    }
+void display()
+{
+    if (top==-1)
+    {
+        printf("Stack is Underflow");
+    }
+    else
+    {
+        printf("\nStack Elements");
+        for(int i=0;i<=top;i++)
+        {
+            printf(", %d ",stack[i]);
+        }
+    }
+}
+int main()
+{
+    push(10);
+    push(20);
+    push(30);
+    display();
+    pop();
+    display();
+    return 0;
+}
